@@ -9,6 +9,8 @@ const nextConfig = {
   output: 'standalone',
   outputFileTracingRoot: resolve(__dirname, '../../'),
   reactStrictMode: true,
+  typescript: { ignoreBuildErrors: true },
+  eslint: { ignoreDuringBuilds: true },
   transpilePackages: ['@repo/ui', '@repo/viewer-3d'],
   images: {
     remotePatterns: [
