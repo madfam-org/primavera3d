@@ -9,7 +9,7 @@ import {
   type ManufacturingProcess,
   type Material,
   type Currency,
-} from '@cotiza/client/react';
+} from '@/lib/cotiza-stub';
 
 const PROCESSES: { id: ManufacturingProcess; name: string; description: string }[] = [
   {

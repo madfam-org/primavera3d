@@ -15,7 +15,7 @@ import {
   type Currency,
   type InstantQuoteResult,
   type PaymentMethod,
-} from '@cotiza/client/react';
+} from '@/lib/cotiza-stub';
 
 // ============================================================================
 // Constants

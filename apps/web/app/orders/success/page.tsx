@@ -9,7 +9,7 @@ import {
   formatCurrency,
   formatPaymentMethod,
   PAYMENT_METHOD_ICONS,
-} from '@cotiza/client/react';
+} from '@/lib/cotiza-stub';
 
 function OrderSuccessContent() {
   const searchParams = useSearchParams();
