@@ -10,16 +10,14 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@cotiza/client": "^0.1.0",
     "@janua/react-sdk": "^0.1.0",
-    "@coforma/client": "^0.1.0",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-slot": "^1.0.2",
     "@react-three/drei": "^9.88.0",
     "@react-three/fiber": "^8.15.0",
-    "@repo/ui": "*",
-    "@repo/viewer-3d": "*",
+    "@repo/ui": "workspace:*",
+    "@repo/viewer-3d": "workspace:*",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.0",
@@ -34,8 +32,8 @@
     "zod": "3.24.1"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/typescript-config": "*",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@types/node": "^22.15.3",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",

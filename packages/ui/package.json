@@ -11,8 +11,8 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/typescript-config": "*",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@types/node": "^22.15.3",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
@@ -22,7 +22,7 @@
   "dependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "@repo/utils": "*",
+    "@repo/utils": "workspace:*",
     "lucide-react": "^0.312.0"
   }
 }

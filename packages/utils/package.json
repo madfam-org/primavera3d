@@ -15,8 +15,8 @@
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/typescript-config": "*",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "eslint": "^9.34.0",
     "typescript": "^5.9.3"
   }
