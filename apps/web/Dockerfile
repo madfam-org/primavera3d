@@ -21,7 +21,7 @@ COPY apps/web/package.json ./apps/web/
 COPY packages/ ./packages/
 
 # Install dependencies
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --no-frozen-lockfile
 
 # Stage 2: Builder
 FROM node:20-alpine AS builder
