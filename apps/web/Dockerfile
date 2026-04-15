@@ -12,17 +12,23 @@ WORKDIR /app
 # Install dependencies needed for native modules
 RUN apk add --no-cache libc6-compat
 
+# Enable pnpm via corepack
+RUN corepack enable && corepack prepare pnpm@9 --activate
+
 # Copy root package files for monorepo
-COPY package.json package-lock.json* ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/web/package.json ./apps/web/
 COPY packages/ ./packages/
 
 # Install dependencies
-RUN npm ci
+RUN pnpm install --frozen-lockfile
 
 # Stage 2: Builder
 FROM node:20-alpine AS builder
 WORKDIR /app
+
+# Enable pnpm via corepack
+RUN corepack enable && corepack prepare pnpm@9 --activate
 
 # Copy dependencies from deps stage
 COPY --from=deps /app/node_modules ./node_modules
@@ -36,7 +42,7 @@ ENV NODE_ENV=production
 
 # Build the application with standalone output
 WORKDIR /app/apps/web
-RUN npm run build
+RUN pnpm build
 
 # Stage 3: Runner
 FROM node:20-alpine AS runner

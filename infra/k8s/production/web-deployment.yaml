@@ -30,6 +30,7 @@ spec:
       containers:
       - name: primavera3d-web
         image: ghcr.io/madfam-org/primavera3d/web:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
           name: http
@@ -45,6 +46,7 @@ spec:
             cpu: "500m"
             memory: "512Mi"
         securityContext:
+          privileged: false
           allowPrivilegeEscalation: false
           capabilities:
             drop: [ALL]
