@@ -18,7 +18,6 @@ RUN pnpm install --frozen-lockfile
 
 # Copy source code
 COPY apps/web/ ./apps/web/
-COPY tsconfig.json ./
 
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
