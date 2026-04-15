@@ -39,6 +39,10 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
+      - name: Configure npm registry auth
+        run: |
+          echo "//npm.madfam.io/:_authToken=${{ secrets.NPM_MADFAM_TOKEN }}" >> .npmrc
+
       - name: Build and push web
         uses: docker/build-push-action@v5
         id: build-web
