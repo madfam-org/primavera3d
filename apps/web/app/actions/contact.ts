@@ -20,6 +20,56 @@ export interface ContactFormResponse {
   errors?: Record<string, string>;
 }
 
+const CONTACT_RECIPIENT = process.env.CONTACT_EMAIL ?? 'innovacionesmadfam@proton.me';
+const RESEND_FROM = process.env.RESEND_FROM_EMAIL ?? 'Primavera3D <noreply@primavera3d.com>';
+
+async function sendEmailViaResend(data: ContactFormData): Promise<void> {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.warn(
+      '[contact] RESEND_API_KEY is not set — skipping email send. Form data logged below.',
+    );
+    console.log('[contact] Submission (no-send):', {
+      name: data.name,
+      email: data.email,
+      subject: data.subject,
+    });
+    return;
+  }
+
+  const html = `
+    <h2>New Contact Form Submission</h2>
+    <p><strong>Name:</strong> ${data.name}</p>
+    <p><strong>Email:</strong> ${data.email}</p>
+    ${data.company ? `<p><strong>Company:</strong> ${data.company}</p>` : ''}
+    ${data.phone ? `<p><strong>Phone:</strong> ${data.phone}</p>` : ''}
+    <p><strong>Subject:</strong> ${data.subject}</p>
+    <hr />
+    <p>${data.message.replace(/\n/g, '<br />')}</p>
+  `.trim();
+
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      from: RESEND_FROM,
+      to: [CONTACT_RECIPIENT],
+      reply_to: data.email,
+      subject: `Contact Form: ${data.subject}`,
+      html,
+    }),
+  });
+
+  if (!res.ok) {
+    const body = await res.text();
+    console.error('[contact] Resend API error:', res.status, body);
+    throw new Error(`Email service returned ${res.status}`);
+  }
+}
+
 export async function submitContactForm(formData: FormData): Promise<ContactFormResponse> {
   try {
     // Parse and validate form data
@@ -34,21 +84,7 @@ export async function submitContactForm(formData: FormData): Promise<ContactForm
 
     const validatedData = contactSchema.parse(rawData);
 
-    // In production, you would send this to an email service
-    // For now, we'll log it and return success
-    console.log('Contact form submission:', validatedData);
-
-    // TODO: Integrate with email service (SendGrid, Resend, etc.)
-    // Example:
-    // await sendEmail({
-    //   to: process.env.CONTACT_EMAIL,
-    //   from: validatedData.email,
-    //   subject: `Contact Form: ${validatedData.subject}`,
-    //   html: emailTemplate(validatedData)
-    // });
-
-    // For demo purposes, simulate a delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await sendEmailViaResend(validatedData);
 
     return {
       success: true,
@@ -62,7 +98,7 @@ export async function submitContactForm(formData: FormData): Promise<ContactForm
           errors[err.path[0] as string] = err.message;
         }
       });
-      
+
       return {
         success: false,
         message: 'Please correct the errors in the form.',
@@ -70,7 +106,7 @@ export async function submitContactForm(formData: FormData): Promise<ContactForm
       };
     }
 
-    console.error('Contact form error:', error);
+    console.error('[contact] Form submission error:', error);
     return {
       success: false,
       message: 'An error occurred. Please try again later.',
