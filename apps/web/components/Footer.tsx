@@ -115,7 +115,11 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Primavera3D. All rights reserved.
+            © {new Date().getFullYear()} Primavera3D. By{' '}
+            <a href="https://madfam.io" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              Innovaciones MADFAM
+            </a>
+            .
           </div>
           
           {/* Social Links */}
@@ -139,12 +143,15 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div className="flex items-center gap-6 text-sm">
-            <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
+            <a href="https://madfam.io/privacy" className="text-gray-400 hover:text-white transition-colors">
               Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
+            </a>
+            <a href="https://madfam.io/terms" className="text-gray-400 hover:text-white transition-colors">
               Terms of Service
-            </Link>
+            </a>
+            <a href="https://status.madfam.io" className="text-gray-400 hover:text-white transition-colors">
+              Status
+            </a>
           </div>
         </div>
       </div>

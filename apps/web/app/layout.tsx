@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Primavera3D | Advanced 3D Modeling & Digital Fabrication",
     description: "Transform your ideas into reality with cutting-edge 3D modeling and digital fabrication services.",
     url: "https://primavera3d.pro",
-    siteName: "Primavera3D",
+    siteName: "Primavera3D by MADFAM",
     images: [
       {
         url: "/og-image.jpg",
