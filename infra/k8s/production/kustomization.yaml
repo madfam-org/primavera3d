@@ -7,6 +7,6 @@ resources:
 - web-service.yaml
 - network-policies.yaml
 images:
-- digest: sha256:238bdd15e3460a449a9930d7114b86facc5880fd68ebf40d60b348be44003b29
+- digest: sha256:c86d8e8bbb99f6ba0ecd9583ca41ca172b8f3e43a95b86a909f6fd8fb32dcda6
   name: ghcr.io/madfam-org/primavera3d/web
   newName: ghcr.io/madfam-org/primavera3d/web
