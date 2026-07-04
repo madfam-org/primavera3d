@@ -5,6 +5,13 @@
 **Status:** Ready for Implementation
 **Approval:** Pending
 
+> [!NOTE]
+> **Historical planning document (noted 2026-07-04, RFC 0024 P3).** The
+> Vercel/Edge deployment stack described below was superseded: the repo
+> actually deploys to MADFAM's bare-metal k3s cluster via GHCR images,
+> kustomize, and Argo CD, operated through Enclii. See the README
+> "Deployment" section and `infra/` for the current stack.
+
 ---
 
 ## Executive Summary

@@ -29,7 +29,7 @@ Primavera3D showcases professional 3D modeling and digital fabrication services 
 | CMS          | Sanity.io                                            |
 | Database     | PostgreSQL with Prisma ORM                           |
 | Media        | Cloudinary (images), Mux (video), AWS S3 (3D models) |
-| Deployment   | Vercel                                               |
+| Deployment   | MADFAM k3s (bare-metal Hetzner) — GHCR images + Argo CD, Enclii platform |
 
 ## Project Structure
 
@@ -198,20 +198,30 @@ Primavera3D integrates with other MADFAM platforms:
 
 ## Deployment
 
-### Vercel (Recommended)
+### Current status (2026-07-04)
+
+Primavera3D deploys to **MADFAM's bare-metal k3s cluster (Hetzner)**, not
+Vercel. This is what the repository's own manifests and workflows implement:
+
+- `.github/workflows/build-deploy.yml` builds the web image from
+  `apps/web/Dockerfile`, pushes it to `ghcr.io/madfam-org/primavera3d/web`,
+  and pins the digest via kustomize.
+- Kubernetes manifests live in `infra/k8s/production/` (namespace
+  `primavera3d`: deployment, service, network policies, kustomization).
+- Argo CD reconciles the manifests (`infra/argocd/config.json`, tracking
+  `main` at `infra/k8s/production`).
+- Day-to-day operations go through **Enclii** (see
+  [ECOSYSTEM.md](./ECOSYSTEM.md)).
+
+> **Historical note:** earlier versions of this README recommended Vercel CLI
+> deployment. That path was never wired into this repo's CI (there is no
+> `vercel.json`) and is retained here only as history — do not deploy to
+> Vercel.
+
+### Docker (local)
 
 ```bash
-# Install Vercel CLI
-pnpm i -g vercel
-
-# Deploy
-vercel
-```
-
-### Docker
-
-```bash
-docker build -t primavera3d .
+docker build -f apps/web/Dockerfile -t primavera3d .
 docker run -p 3000:3000 primavera3d
 ```
 
