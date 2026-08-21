@@ -7,30 +7,31 @@ const values = [
   {
     icon: Target,
     title: 'Precision Engineering',
-    description: 'Every design is meticulously crafted with CAD-level accuracy and attention to detail.'
+    description:
+      'Every design is meticulously crafted with CAD-level accuracy and attention to detail.',
   },
   {
     icon: Lightbulb,
     title: 'Innovation Driven',
-    description: 'We push the boundaries of what\'s possible with cutting-edge 3D technologies.'
+    description: "We push the boundaries of what's possible with cutting-edge 3D technologies.",
   },
   {
     icon: Users,
     title: 'Collaborative Partnership',
-    description: 'Working closely with clients to transform ideas into tangible reality.'
+    description: 'Working closely with clients to transform ideas into tangible reality.',
   },
   {
     icon: Award,
     title: 'Excellence Standard',
-    description: 'Committed to delivering the highest quality in every project we undertake.'
-  }
+    description: 'Committed to delivering the highest quality in every project we undertake.',
+  },
 ];
 
 const stats = [
   { number: '150+', label: 'Projects Completed' },
   { number: '8+', label: 'Years Experience' },
   { number: '25+', label: 'Industries Served' },
-  { number: '98%', label: 'Client Satisfaction' }
+  { number: '98%', label: 'Client Satisfaction' },
 ];
 
 export default function AboutPage() {
@@ -38,7 +39,7 @@ export default function AboutPage() {
     <main className="bp-page blueprint-stage">
       {/* Technical depth overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/5 to-black/20" />
-      
+
       {/* Hero Section */}
       <section className="bp-section relative">
         <div className="bp-container">
@@ -55,9 +56,9 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="bp-text-body max-w-3xl mx-auto">
-              We are a cutting-edge digital fabrication studio specializing in parametric design, 
-              3D modeling, and advanced manufacturing solutions that bridge the gap between 
-              imagination and reality.
+              We are a cutting-edge digital fabrication studio specializing in parametric design, 3D
+              modeling, and advanced manufacturing solutions that bridge the gap between imagination
+              and reality.
             </p>
           </motion.div>
         </div>
@@ -76,23 +77,23 @@ export default function AboutPage() {
               <h2 className="bp-text-h2 neon-text">Our Story</h2>
               <div className="space-y-6">
                 <p className="bp-text-body">
-                  Founded by a team of engineers and designers passionate about the intersection 
-                  of computational design and digital fabrication, Primavera3D emerged from the 
-                  belief that technology should amplify human creativity, not replace it.
+                  Founded by a team of engineers and designers passionate about the intersection of
+                  computational design and digital fabrication, Primavera3D emerged from the belief
+                  that technology should amplify human creativity, not replace it.
                 </p>
                 <p className="bp-text-body">
-                  From our studio in Austin, Texas, we work with clients worldwide to solve 
-                  complex design challenges through parametric modeling, generative algorithms, 
-                  and precision manufacturing.
+                  From our studio in Austin, Texas, we work with clients worldwide to solve complex
+                  design challenges through parametric modeling, generative algorithms, and
+                  precision manufacturing.
                 </p>
                 <p className="bp-text-body">
-                  Every project we undertake is guided by the principles of sustainable design, 
-                  technical excellence, and the pursuit of solutions that are both beautiful 
-                  and functional.
+                  Every project we undertake is guided by the principles of sustainable design,
+                  technical excellence, and the pursuit of solutions that are both beautiful and
+                  functional.
                 </p>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -110,12 +111,8 @@ export default function AboutPage() {
                     viewport={{ once: true }}
                     className="text-center"
                   >
-                    <div className="text-3xl font-bold text-blueprint-blue mb-2">
-                      {stat.number}
-                    </div>
-                    <div className="bp-text-muted text-sm">
-                      {stat.label}
-                    </div>
+                    <div className="text-3xl font-bold text-blueprint-blue mb-2">{stat.number}</div>
+                    <div className="bp-text-muted text-sm">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -174,8 +171,8 @@ export default function AboutPage() {
           >
             <h2 className="bp-text-h2">Ready to Build Something Extraordinary?</h2>
             <p className="bp-text-body mb-8">
-              Let&apos;s collaborate to bring your most ambitious ideas to life through 
-              the power of computational design and digital fabrication.
+              Let&apos;s collaborate to bring your most ambitious ideas to life through the power of
+              computational design and digital fabrication.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

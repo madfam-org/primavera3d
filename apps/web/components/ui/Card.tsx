@@ -8,19 +8,14 @@ interface CardProps {
   onClick?: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ 
-  variant = 'default', 
-  children, 
-  className = '',
-  onClick 
-}) => {
+const Card: React.FC<CardProps> = ({ variant = 'default', children, className = '', onClick }) => {
   const baseClass = 'bp-card-base';
-  
+
   const variants = {
     default: '',
     interactive: 'bp-card-interactive cursor-pointer',
     minimal: 'blueprint-sheet bg-opacity-50',
-    hero: 'neon-border pulse-glow'
+    hero: 'neon-border pulse-glow',
   };
 
   const cardClass = `${baseClass} ${variants[variant]} ${className}`;

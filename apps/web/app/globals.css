@@ -24,31 +24,31 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 221 83% 53%;
     --radius: 0.5rem;
-    
+
     /* Blueprint Design System Tokens */
-    --bp-bg: #0A1422;
-    --bp-surface: #0E1A2B;
+    --bp-bg: #0a1422;
+    --bp-surface: #0e1a2b;
     --bp-card: #112842;
     --bp-border: rgba(207, 232, 255, 0.15);
     --bp-grid: rgba(207, 232, 255, 0.08);
-    
+
     /* Typography Scale */
     --bp-text-primary: #ffffff;
-    --bp-text-secondary: #CFE8FF;
-    --bp-text-tertiary: #9CA3AF;
-    --bp-text-muted: #6B7280;
-    --bp-text-accent: #2563EB;
-    
+    --bp-text-secondary: #cfe8ff;
+    --bp-text-tertiary: #9ca3af;
+    --bp-text-muted: #6b7280;
+    --bp-text-accent: #2563eb;
+
     /* Spacing Scale */
-    --bp-space-xs: 0.25rem;   /* 4px */
-    --bp-space-sm: 0.5rem;    /* 8px */
-    --bp-space-md: 1rem;      /* 16px */
-    --bp-space-lg: 1.5rem;    /* 24px */
-    --bp-space-xl: 2rem;      /* 32px */
-    --bp-space-2xl: 3rem;     /* 48px */
-    --bp-space-3xl: 4rem;     /* 64px */
-    --bp-space-4xl: 5rem;     /* 80px */
-    
+    --bp-space-xs: 0.25rem; /* 4px */
+    --bp-space-sm: 0.5rem; /* 8px */
+    --bp-space-md: 1rem; /* 16px */
+    --bp-space-lg: 1.5rem; /* 24px */
+    --bp-space-xl: 2rem; /* 32px */
+    --bp-space-2xl: 3rem; /* 48px */
+    --bp-space-3xl: 4rem; /* 64px */
+    --bp-space-4xl: 5rem; /* 80px */
+
     /* Animation Tokens */
     --bp-duration-fast: 200ms;
     --bp-duration-normal: 300ms;
@@ -96,30 +96,33 @@
     linear-gradient(rgba(207, 232, 255, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(207, 232, 255, 0.08) 1px, transparent 1px),
     /* Sub-grid lines (64px major) */
-    linear-gradient(rgba(207, 232, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(rgba(207, 232, 255, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(207, 232, 255, 0.04) 1px, transparent 1px);
-  background-size: 
-    16px 16px, 16px 16px,
-    64px 64px, 64px 64px;
+  background-size:
+    16px 16px,
+    16px 16px,
+    64px 64px,
+    64px 64px;
 }
 
 /* Enhanced blueprint background for hero sections */
 .blueprint-stage {
-  background-color: #0A1422;
+  background-color: #0a1422;
   background-image:
     /* Fine grid (8px) */
     linear-gradient(rgba(207, 232, 255, 0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(207, 232, 255, 0.06) 1px, transparent 1px),
-    /* Medium grid (32px) */
-    linear-gradient(rgba(207, 232, 255, 0.04) 1px, transparent 1px),
+    /* Medium grid (32px) */ linear-gradient(rgba(207, 232, 255, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(207, 232, 255, 0.04) 1px, transparent 1px),
-    /* Major grid (128px) */
-    linear-gradient(rgba(207, 232, 255, 0.08) 2px, transparent 2px),
+    /* Major grid (128px) */ linear-gradient(rgba(207, 232, 255, 0.08) 2px, transparent 2px),
     linear-gradient(90deg, rgba(207, 232, 255, 0.08) 2px, transparent 2px);
   background-size:
-    8px 8px, 8px 8px,
-    32px 32px, 32px 32px,
-    128px 128px, 128px 128px;
+    8px 8px,
+    8px 8px,
+    32px 32px,
+    32px 32px,
+    128px 128px,
+    128px 128px;
 }
 
 /* Subtle blueprint for card backgrounds */
@@ -143,7 +146,7 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(37, 99, 235, 0.15);
-  box-shadow: 
+  box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -158,7 +161,7 @@
 
 /* Neon glow effects */
 .neon-border {
-  box-shadow: 
+  box-shadow:
     0 0 5px rgba(37, 99, 235, 0.3),
     0 0 10px rgba(37, 99, 235, 0.2),
     0 0 15px rgba(37, 99, 235, 0.1),
@@ -167,7 +170,7 @@
 }
 
 .neon-border:hover {
-  box-shadow: 
+  box-shadow:
     0 0 10px rgba(37, 99, 235, 0.4),
     0 0 20px rgba(37, 99, 235, 0.3),
     0 0 30px rgba(37, 99, 235, 0.2),
@@ -175,8 +178,8 @@
 }
 
 .neon-text {
-  color: #2563EB;
-  text-shadow: 
+  color: #2563eb;
+  text-shadow:
     0 0 5px rgba(37, 99, 235, 0.5),
     0 0 10px rgba(37, 99, 235, 0.3),
     0 0 15px rgba(37, 99, 235, 0.2);
@@ -184,12 +187,14 @@
 
 /* Enhanced hover effects */
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
   transform: translateY(-2px);
-  box-shadow: 
+  box-shadow:
     0 10px 25px -5px rgba(0, 0, 0, 0.25),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
@@ -271,13 +276,14 @@
 }
 
 @keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 
+  0%,
+  100% {
+    box-shadow:
       0 0 5px rgba(37, 99, 235, 0.3),
       0 0 10px rgba(37, 99, 235, 0.2);
   }
   50% {
-    box-shadow: 
+    box-shadow:
       0 0 10px rgba(37, 99, 235, 0.5),
       0 0 20px rgba(37, 99, 235, 0.3),
       0 0 30px rgba(37, 99, 235, 0.1);
@@ -316,7 +322,7 @@
 
 .bp-card-interactive {
   transform: translateY(0);
-  box-shadow: 
+  box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -324,7 +330,7 @@
 
 .bp-card-interactive:hover {
   transform: translateY(-2px);
-  box-shadow: 
+  box-shadow:
     0 10px 25px -5px rgba(0, 0, 0, 0.25),
     0 10px 10px -5px rgba(0, 0, 0, 0.04),
     0 0 20px rgba(37, 99, 235, 0.1);
@@ -380,11 +386,11 @@
   .bp-text-h1 {
     font-size: 4rem;
   }
-  
+
   .bp-text-h2 {
     font-size: 3rem;
   }
-  
+
   .bp-text-h3 {
     font-size: 2.25rem;
   }
