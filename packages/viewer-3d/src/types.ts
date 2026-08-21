@@ -5,7 +5,17 @@ export interface ModelViewerProps {
   className?: string;
   showGrid?: boolean;
   showControls?: boolean;
-  environment?: 'studio' | 'city' | 'sunset' | 'dawn' | 'night' | 'warehouse' | 'forest' | 'apartment' | 'park' | 'lobby';
+  environment?:
+    | 'studio'
+    | 'city'
+    | 'sunset'
+    | 'dawn'
+    | 'night'
+    | 'warehouse'
+    | 'forest'
+    | 'apartment'
+    | 'park'
+    | 'lobby';
 }
 
 export interface Scene3DProps {

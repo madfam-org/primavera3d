@@ -3,24 +3,20 @@
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Grid } from '@react-three/drei';
-import { ModelViewerProps } from './types.js';
-import { LoadingSpinner } from './LoadingSpinner.js';
+import { ModelViewerProps } from './types';
+import { LoadingSpinner } from './LoadingSpinner';
 
-export function ModelViewer({ 
-  children, 
+export function ModelViewer({
+  children,
   className,
   showGrid = true,
   showControls = true,
-  environment = 'studio'
+  environment = 'studio',
 }: ModelViewerProps) {
   return (
     <div className={className} style={{ width: '100%', height: '100%' }}>
       <Suspense fallback={<LoadingSpinner />}>
-        <Canvas
-          camera={{ position: [5, 5, 5], fov: 50 }}
-          shadows
-          dpr={[1, 2]}
-        >
+        <Canvas camera={{ position: [5, 5, 5], fov: 50 }} shadows dpr={[1, 2]}>
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 10]} intensity={1} castShadow />
           {showGrid && (
@@ -37,7 +33,7 @@ export function ModelViewer({
             />
           )}
           {showControls && <OrbitControls enableDamping />}
-          <Environment preset={environment as any} />
+          <Environment preset={environment} />
           {children}
         </Canvas>
       </Suspense>

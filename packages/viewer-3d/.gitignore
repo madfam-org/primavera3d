@@ -1,0 +1,6 @@
+# This is a source-only package consumed via Next.js `transpilePackages`.
+# The `dev` script (`tsc --watch`) emits JS/declaration files next to the
+# TypeScript sources; those build artifacts must not be committed.
+src/**/*.js
+src/**/*.d.ts
+src/**/*.d.ts.map
