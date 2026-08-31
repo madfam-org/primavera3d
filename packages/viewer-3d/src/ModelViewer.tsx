@@ -1,9 +1,15 @@
 'use client';
 
 import { Suspense } from 'react';
+import type { ComponentProps } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Grid } from '@react-three/drei';
 import { ModelViewerProps } from './types.js';
+
+// drei doesn't re-export PresetsType from a stable subpath, so pull the exact
+// `preset` prop type off the Environment component itself — robust to drei's
+// internal module layout under nodenext resolution.
+type EnvironmentPreset = NonNullable<ComponentProps<typeof Environment>['preset']>;
 import { LoadingSpinner } from './LoadingSpinner.js';
 
 export function ModelViewer({ 
@@ -37,7 +43,7 @@ export function ModelViewer({
             />
           )}
           {showControls && <OrbitControls enableDamping />}
-          <Environment preset={environment as any} />
+          <Environment preset={environment as EnvironmentPreset} />
           {children}
         </Canvas>
       </Suspense>
