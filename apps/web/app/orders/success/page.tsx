@@ -6,7 +6,6 @@ import Link from 'next/link';
 import {
   CotizaProvider,
   useCheckoutResult,
-  formatCurrency,
   formatPaymentMethod,
   PAYMENT_METHOD_ICONS,
 } from '@/lib/cotiza-stub';
@@ -58,9 +57,7 @@ function OrderSuccessContent() {
     return (
       <div className="text-center py-8">
         <div className="text-6xl mb-4">⏳</div>
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-          Payment Pending
-        </h2>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Payment Pending</h2>
         <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
           Your order has been created. Please complete the payment using the instructions below.
         </p>
@@ -68,9 +65,7 @@ function OrderSuccessContent() {
         {result.paymentMethod === 'oxxo' && (
           <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-xl p-6 max-w-md mx-auto mb-6">
             <div className="text-4xl mb-3">🏪</div>
-            <h3 className="font-semibold text-orange-800 dark:text-orange-300 mb-2">
-              Pay at OXXO
-            </h3>
+            <h3 className="font-semibold text-orange-800 dark:text-orange-300 mb-2">Pay at OXXO</h3>
             <p className="text-sm text-orange-700 dark:text-orange-400">
               Visit any OXXO store and show the voucher to complete your payment. You have 24 hours
               to pay.
@@ -84,12 +79,10 @@ function OrderSuccessContent() {
         {result.paymentMethod === 'spei' && (
           <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6 max-w-md mx-auto mb-6">
             <div className="text-4xl mb-3">🏦</div>
-            <h3 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">
-              Pay via SPEI
-            </h3>
+            <h3 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">Pay via SPEI</h3>
             <p className="text-sm text-blue-700 dark:text-blue-400">
-              Complete the bank transfer using your bank's app or website. Use the CLABE provided
-              in your email.
+              Complete the bank transfer using your bank&apos;s app or website. Use the CLABE
+              provided in your email.
             </p>
             <p className="text-xs text-blue-600 dark:text-blue-500 mt-3">
               Payment instructions have been sent to your email.
@@ -138,12 +131,10 @@ function OrderSuccessContent() {
   return (
     <div className="text-center py-8">
       <div className="text-6xl mb-4">✅</div>
-      <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-        Order Confirmed!
-      </h2>
+      <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Order Confirmed!</h2>
       <p className="text-gray-600 dark:text-gray-400 mb-6">
-        Thank you for your order. We've received your payment and will begin processing your parts
-        shortly.
+        Thank you for your order. We&apos;ve received your payment and will begin processing your
+        parts shortly.
       </p>
 
       {/* Order Details */}
@@ -174,11 +165,11 @@ function OrderSuccessContent() {
 
       {/* What's Next */}
       <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6 max-w-md mx-auto mb-8">
-        <h3 className="font-semibold text-blue-800 dark:text-blue-300 mb-3">What's Next?</h3>
+        <h3 className="font-semibold text-blue-800 dark:text-blue-300 mb-3">What&apos;s Next?</h3>
         <ol className="text-left text-sm text-blue-700 dark:text-blue-400 space-y-2">
           <li className="flex gap-2">
             <span>1.</span>
-            <span>You'll receive a confirmation email with your order details</span>
+            <span>You&apos;ll receive a confirmation email with your order details</span>
           </li>
           <li className="flex gap-2">
             <span>2.</span>
@@ -186,7 +177,7 @@ function OrderSuccessContent() {
           </li>
           <li className="flex gap-2">
             <span>3.</span>
-            <span>We'll notify you when your parts are ready for shipping</span>
+            <span>We&apos;ll notify you when your parts are ready for shipping</span>
           </li>
           <li className="flex gap-2">
             <span>4.</span>

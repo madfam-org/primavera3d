@@ -11,27 +11,34 @@ interface FilterOptions {
   years: number[];
 }
 
+interface SelectedFilters {
+  categories: string[];
+  technologies: string[];
+  materials: string[];
+  years: number[];
+}
+
 interface ProjectFiltersProps {
   options: FilterOptions;
-  onFilterChange: (filters: any) => void;
+  onFilterChange: (filters: SelectedFilters) => void;
 }
 
 export default function ProjectFilters({ options, onFilterChange }: ProjectFiltersProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedFilters, setSelectedFilters] = useState({
-    categories: [] as string[],
-    technologies: [] as string[],
-    materials: [] as string[],
-    years: [] as number[],
+  const [selectedFilters, setSelectedFilters] = useState<SelectedFilters>({
+    categories: [],
+    technologies: [],
+    materials: [],
+    years: [],
   });
 
-  const toggleFilter = (type: keyof typeof selectedFilters, value: string | number) => {
+  const toggleFilter = (type: keyof SelectedFilters, value: string | number) => {
     setSelectedFilters(prev => {
-      const current = prev[type] as any[];
+      const current = prev[type] as (string | number)[];
       const updated = current.includes(value)
         ? current.filter(item => item !== value)
         : [...current, value];
-      
+
       const newFilters = { ...prev, [type]: updated };
       onFilterChange(newFilters);
       return newFilters;
@@ -76,7 +83,7 @@ export default function ProjectFilters({ options, onFilterChange }: ProjectFilte
               className="fixed inset-0 bg-black/50 z-50"
               onClick={() => setIsOpen(false)}
             />
-            
+
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
