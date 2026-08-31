@@ -17,7 +17,20 @@
         "first-contentful-paint": ["warn", { "maxNumericValue": 2000 }],
         "largest-contentful-paint": ["warn", { "maxNumericValue": 2500 }],
         "cumulative-layout-shift": ["warn", { "maxNumericValue": 0.1 }],
-        "total-blocking-time": ["warn", { "maxNumericValue": 300 }]
+        "total-blocking-time": ["warn", { "maxNumericValue": 300 }],
+
+        "installable-manifest": "off",
+        "service-worker": "off",
+        "themed-omnibox": "off",
+        "maskable-icon": "off",
+        "apple-touch-icon": "off",
+        "splash-screen": "off",
+
+        "non-composited-animations": "warn",
+        "unused-javascript": "warn",
+        "unused-css-rules": "warn",
+        "uses-long-cache-ttl": "warn",
+        "csp-xss": "warn"
       }
     },
     "upload": {

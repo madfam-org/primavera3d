@@ -54,6 +54,11 @@ const config: Config = {
         },
         blueprint: {
           blue: '#2563EB',
+          // `blue` (#2563EB) is the brand fill for buttons/badges, but as small
+          // TEXT on the dark blueprint surfaces it only reaches ~3.4:1 — below
+          // WCAG AA (4.5:1). `accent` (blue-400) reaches ~7:1 on those surfaces
+          // and is the token to use for blue text/links on dark.
+          accent: '#60A5FA',
           dark: '#0A0E27',
           light: '#E0E7FF',
         },

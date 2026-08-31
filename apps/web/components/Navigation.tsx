@@ -85,7 +85,7 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                   className={`block py-2 ${
                     pathname === item.href
-                      ? 'text-blueprint-blue font-medium'
+                      ? 'text-blueprint-accent font-medium'
                       : 'text-gray-400 hover:text-white'
                   } transition-colors`}
                 >

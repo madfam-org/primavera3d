@@ -50,6 +50,32 @@ const nextConfig = {
           key: 'Referrer-Policy',
           value: 'origin-when-cross-origin',
         },
+        {
+          // Content-Security-Policy. Lighthouse's csp-xss audit flagged the
+          // absence of any CSP. The key XSS-hardening directives are
+          // `object-src 'none'` (kills legacy plugin vectors) and
+          // `base-uri 'none'` (blocks <base> tag injection that rewrites
+          // relative URLs). script-src/style-src keep 'unsafe-inline' because
+          // Next's App Router injects inline hydration scripts and styled-jsx
+          // without a nonce pipeline; img/font/connect are scoped to the origins
+          // the app actually uses (the two image CDNs, data/blob for canvases
+          // and inlined assets). Tightening script-src to a nonce is a larger,
+          // separate change (needs middleware).
+          key: 'Content-Security-Policy',
+          value: [
+            "default-src 'self'",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+            "style-src 'self' 'unsafe-inline'",
+            "img-src 'self' data: blob: https://res.cloudinary.com https://cdn.sanity.io",
+            "font-src 'self' data:",
+            "connect-src 'self'",
+            "worker-src 'self' blob:",
+            "frame-ancestors 'none'",
+            "object-src 'none'",
+            "base-uri 'none'",
+            "form-action 'self'",
+          ].join('; '),
+        },
       ],
     },
   ],

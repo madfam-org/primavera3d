@@ -118,7 +118,7 @@ export default function Footer() {
         {/* Ecosystem Links */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-400 mb-6">
-            <span className="text-gray-500">MADFAM Ecosystem:</span>
+            <span className="text-gray-400">MADFAM Ecosystem:</span>
             <a href="https://cotiza.studio" className="hover:text-white transition-colors">
               Cotiza
             </a>

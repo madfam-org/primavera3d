@@ -37,13 +37,15 @@ export default function ProjectCard({ project, index, viewMode }: ProjectCardPro
           <div className="flex-1 p-6">
             <div className="flex items-start justify-between mb-3">
               <div>
-                <span className="text-sm text-blueprint-blue font-medium">{project.category}</span>
+                <span className="text-sm text-blueprint-accent font-medium">
+                  {project.category}
+                </span>
                 <h3 className="text-2xl font-bold mt-1">{project.title}</h3>
               </div>
               <span className="text-sm text-gray-400">{project.year}</span>
             </div>
             <p className="text-gray-400 mb-4">{project.description}</p>
-            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
               <span className="flex items-center gap-1">
                 <User className="h-4 w-4" />
                 {project.client}
@@ -77,7 +79,7 @@ export default function ProjectCard({ project, index, viewMode }: ProjectCardPro
 
         <div className="p-6">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-blueprint-blue font-medium">{project.category}</span>
+            <span className="text-sm text-blueprint-accent font-medium">{project.category}</span>
             <span className="text-sm text-gray-400 flex items-center gap-1">
               <Calendar className="h-3 w-3" />
               {project.year}
@@ -91,7 +93,7 @@ export default function ProjectCard({ project, index, viewMode }: ProjectCardPro
           <p className="text-gray-400 text-sm mb-4 line-clamp-2">{project.description}</p>
 
           <div className="flex items-center justify-between">
-            <span className="text-xs text-gray-500 flex items-center gap-1">
+            <span className="text-xs text-gray-400 flex items-center gap-1">
               <User className="h-3 w-3" />
               {project.client}
             </span>
