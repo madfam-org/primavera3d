@@ -30,7 +30,8 @@
         "unused-javascript": "warn",
         "unused-css-rules": "warn",
         "uses-long-cache-ttl": "warn",
-        "csp-xss": "warn"
+        "csp-xss": "warn",
+        "errors-in-console": "warn"
       }
     },
     "upload": {

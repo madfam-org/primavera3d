@@ -11,3 +11,9 @@ public/assets
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
+
+# Kubernetes manifests are machine-managed: the CI image-digest updater rewrites
+# infra/k8s/production/kustomization.yaml in kustomize's own YAML style on every
+# deploy, which undoes any prettier formatting — so `prettier --check` on them is
+# a recurring false failure. Leave the manifests to kubectl/kustomize.
+infra/k8s/
