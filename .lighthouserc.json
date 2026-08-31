@@ -1,8 +1,9 @@
 {
   "ci": {
     "collect": {
-      "startServerCommand": "npm run build && npm run start",
-      "startServerReadyPattern": "ready on",
+      "startServerCommand": "pnpm --filter web run build && pnpm --filter web run start",
+      "startServerReadyPattern": "Local:",
+      "startServerReadyTimeout": 120000,
       "url": ["http://localhost:3000"],
       "numberOfRuns": 3
     },
