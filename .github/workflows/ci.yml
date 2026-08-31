@@ -139,5 +139,10 @@ jobs:
         uses: treosh/lighthouse-ci-action@v10
         with:
           configPath: './.lighthouserc.json'
-          uploadArtifacts: true
+          # Results go to LHCI temporary public storage (quota-free). The GitHub
+          # artifact upload is redundant with that AND currently fails at
+          # "Create Artifact Container" under the org-wide Actions artifact-quota
+          # condition, which was failing the whole job even though every
+          # assertion passed — so it stays off.
+          uploadArtifacts: false
           temporaryPublicStorage: true

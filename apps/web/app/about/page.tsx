@@ -111,7 +111,9 @@ export default function AboutPage() {
                     viewport={{ once: true }}
                     className="text-center"
                   >
-                    <div className="text-3xl font-bold text-blueprint-blue mb-2">{stat.number}</div>
+                    <div className="text-3xl font-bold text-blueprint-accent mb-2">
+                      {stat.number}
+                    </div>
                     <div className="bp-text-muted text-sm">{stat.label}</div>
                   </motion.div>
                 ))}

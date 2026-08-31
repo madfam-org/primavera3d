@@ -204,7 +204,7 @@ export default function PortfolioPage() {
               >
                 <Filter className="h-16 w-16 text-gray-600 mx-auto mb-4" />
                 <h3 className="text-xl text-gray-400">No projects found</h3>
-                <p className="text-gray-500 mt-2">Try adjusting your filters or search query</p>
+                <p className="text-gray-400 mt-2">Try adjusting your filters or search query</p>
               </motion.div>
             )}
           </AnimatePresence>

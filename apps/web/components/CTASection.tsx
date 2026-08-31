@@ -51,15 +51,15 @@ export default function CTASection() {
             className="mt-12 flex flex-wrap justify-center gap-8 text-gray-400"
           >
             <div className="flex items-center gap-2">
-              <span className="text-3xl font-bold text-blueprint-blue">100+</span>
+              <span className="text-3xl font-bold text-blueprint-accent">100+</span>
               <span>Projects Completed</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-3xl font-bold text-blueprint-blue">50+</span>
+              <span className="text-3xl font-bold text-blueprint-accent">50+</span>
               <span>Happy Clients</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-3xl font-bold text-blueprint-blue">5+</span>
+              <span className="text-3xl font-bold text-blueprint-accent">5+</span>
               <span>Years Experience</span>
             </div>
           </motion.div>

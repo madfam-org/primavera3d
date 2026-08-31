@@ -63,7 +63,9 @@ export default function FeaturedProjects() {
               </div>
 
               <div className="p-6">
-                <span className="text-sm text-blueprint-blue font-medium">{project.category}</span>
+                <span className="text-sm text-blueprint-accent font-medium">
+                  {project.category}
+                </span>
                 <h3 className="text-xl font-bold mt-2 mb-2 group-hover:text-blueprint-light transition-colors">
                   {project.title}
                 </h3>
@@ -95,7 +97,7 @@ export default function FeaturedProjects() {
         >
           <Link
             href="/portfolio"
-            className="inline-flex items-center px-6 py-3 text-blueprint-blue hover:text-blueprint-light glass-light rounded-lg hover-lift neon-border transition-all duration-300"
+            className="inline-flex items-center px-6 py-3 text-blueprint-accent hover:text-blueprint-light glass-light rounded-lg hover-lift neon-border transition-all duration-300"
           >
             View All Projects
             <ArrowRight className="ml-2 h-5 w-5" />
