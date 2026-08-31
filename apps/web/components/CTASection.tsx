@@ -22,10 +22,10 @@ export default function CTASection() {
             </span>
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Let&apos;s transform your ideas into reality with cutting-edge 3D technology 
-            and expert craftsmanship.
+            Let&apos;s transform your ideas into reality with cutting-edge 3D technology and expert
+            craftsmanship.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
@@ -42,7 +42,7 @@ export default function CTASection() {
               Schedule Consultation
             </Link>
           </div>
-          
+
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

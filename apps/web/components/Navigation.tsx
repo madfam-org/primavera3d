@@ -30,14 +30,12 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {navItems.map(item => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={`relative py-2 transition-colors ${
-                  pathname === item.href
-                    ? 'text-white'
-                    : 'text-gray-400 hover:text-white'
+                  pathname === item.href ? 'text-white' : 'text-gray-400 hover:text-white'
                 }`}
               >
                 {item.label}
@@ -80,7 +78,7 @@ export default function Navigation() {
             className="md:hidden bg-gray-900 border-t border-gray-800"
           >
             <div className="container mx-auto px-6 py-4 space-y-4">
-              {navItems.map((item) => (
+              {navItems.map(item => (
                 <Link
                   key={item.href}
                   href={item.href}

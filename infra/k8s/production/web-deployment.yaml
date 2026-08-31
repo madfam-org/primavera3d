@@ -26,44 +26,44 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       imagePullSecrets:
-      - name: ghcr-credentials
+        - name: ghcr-credentials
       containers:
-      - name: primavera3d-web
-        image: ghcr.io/madfam-org/primavera3d/web:latest
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 3000
-          name: http
-        envFrom:
-        - secretRef:
-            name: primavera3d-secrets
-            optional: true
-        resources:
-          requests:
-            cpu: "100m"
-            memory: "256Mi"
-          limits:
-            cpu: "500m"
-            memory: "512Mi"
-        securityContext:
-          privileged: false
-          allowPrivilegeEscalation: false
-          capabilities:
-            drop: [ALL]
-        startupProbe:
-          httpGet:
-            path: /
-            port: 3000
-          initialDelaySeconds: 5
-          periodSeconds: 5
-          failureThreshold: 30
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 3000
-          periodSeconds: 10
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 3000
-          periodSeconds: 30
+        - name: primavera3d-web
+          image: ghcr.io/madfam-org/primavera3d/web:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              name: http
+          envFrom:
+            - secretRef:
+                name: primavera3d-secrets
+                optional: true
+          resources:
+            requests:
+              cpu: '100m'
+              memory: '256Mi'
+            limits:
+              cpu: '500m'
+              memory: '512Mi'
+          securityContext:
+            privileged: false
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: [ALL]
+          startupProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            failureThreshold: 30
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            periodSeconds: 30

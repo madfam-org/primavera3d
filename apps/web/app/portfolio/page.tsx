@@ -76,13 +76,13 @@ export default function PortfolioPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
-  const filteredProjects = projects.filter((project) => {
+  const filteredProjects = projects.filter(project => {
     const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory;
-    const matchesSearch = 
+    const matchesSearch =
       project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
-    
+
     return matchesCategory && matchesSearch;
   });
 
@@ -105,7 +105,8 @@ export default function PortfolioPage() {
               </span>
             </h1>
             <p className="text-xl text-gray-300">
-              Explore our diverse range of projects showcasing innovation in 3D design and digital fabrication
+              Explore our diverse range of projects showcasing innovation in 3D design and digital
+              fabrication
             </p>
           </motion.div>
         </div>
@@ -122,14 +123,14 @@ export default function PortfolioPage() {
                 type="text"
                 placeholder="Search projects..."
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={e => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blueprint-blue transition-colors"
               />
             </div>
 
             {/* Category Filters */}
             <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
+              {categories.map(category => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}

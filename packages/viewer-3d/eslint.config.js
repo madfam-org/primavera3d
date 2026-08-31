@@ -1,4 +1,4 @@
-import { config as reactConfig } from "@repo/eslint-config/react-internal";
+import { config as reactConfig } from '@repo/eslint-config/react-internal';
 
 /**
  * This package is built on react-three-fiber, whose JSX is a custom reconciler
@@ -14,7 +14,7 @@ export default [
   ...reactConfig,
   {
     rules: {
-      "react/no-unknown-property": "off",
+      'react/no-unknown-property': 'off',
     },
   },
 ];

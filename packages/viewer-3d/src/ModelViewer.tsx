@@ -12,21 +12,17 @@ import { ModelViewerProps } from './types.js';
 type EnvironmentPreset = NonNullable<ComponentProps<typeof Environment>['preset']>;
 import { LoadingSpinner } from './LoadingSpinner.js';
 
-export function ModelViewer({ 
-  children, 
+export function ModelViewer({
+  children,
   className,
   showGrid = true,
   showControls = true,
-  environment = 'studio'
+  environment = 'studio',
 }: ModelViewerProps) {
   return (
     <div className={className} style={{ width: '100%', height: '100%' }}>
       <Suspense fallback={<LoadingSpinner />}>
-        <Canvas
-          camera={{ position: [5, 5, 5], fov: 50 }}
-          shadows
-          dpr={[1, 2]}
-        >
+        <Canvas camera={{ position: [5, 5, 5], fov: 50 }} shadows dpr={[1, 2]}>
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 10]} intensity={1} castShadow />
           {showGrid && (

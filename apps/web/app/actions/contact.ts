@@ -27,7 +27,7 @@ async function sendEmailViaResend(data: ContactFormData): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     console.warn(
-      '[contact] RESEND_API_KEY is not set — skipping email send. Form data logged below.',
+      '[contact] RESEND_API_KEY is not set — skipping email send. Form data logged below.'
     );
     console.log('[contact] Submission (no-send):', {
       name: data.name,
@@ -76,8 +76,8 @@ export async function submitContactForm(formData: FormData): Promise<ContactForm
     const rawData = {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
-      company: formData.get('company') as string || undefined,
-      phone: formData.get('phone') as string || undefined,
+      company: (formData.get('company') as string) || undefined,
+      phone: (formData.get('phone') as string) || undefined,
       subject: formData.get('subject') as string,
       message: formData.get('message') as string,
     };
@@ -93,7 +93,7 @@ export async function submitContactForm(formData: FormData): Promise<ContactForm
   } catch (error) {
     if (error instanceof z.ZodError) {
       const errors: Record<string, string> = {};
-      error.issues.forEach((err) => {
+      error.issues.forEach(err => {
         if (err.path[0]) {
           errors[err.path[0] as string] = err.message;
         }

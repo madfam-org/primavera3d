@@ -8,7 +8,7 @@ const envLocal = path.join(process.cwd(), '.env.local');
 
 if (!fs.existsSync(envLocal)) {
   console.log('⚠️  .env.local not found');
-  
+
   if (fs.existsSync(envExample)) {
     console.log('📋 Copying .env.example to .env.local...');
     fs.copyFileSync(envExample, envLocal);
@@ -32,11 +32,11 @@ const missingVars = [];
 
 if (fs.existsSync(envLocal)) {
   const envContent = fs.readFileSync(envLocal, 'utf-8');
-  
+
   requiredEnvVars.forEach(varName => {
     const regex = new RegExp(`^${varName}=(.+)$`, 'm');
     const match = envContent.match(regex);
-    
+
     if (!match || !match[1] || match[1].trim() === '') {
       missingVars.push(varName);
     }

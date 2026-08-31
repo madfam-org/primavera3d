@@ -2,11 +2,11 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: primavera3d
 resources:
-- namespace.yaml
-- web-deployment.yaml
-- web-service.yaml
-- network-policies.yaml
+  - namespace.yaml
+  - web-deployment.yaml
+  - web-service.yaml
+  - network-policies.yaml
 images:
-- digest: sha256:c5fef3d9ddfbac39007227a6aaddedf6f220c7a916e33d488f87628880319b99
-  name: ghcr.io/madfam-org/primavera3d/web
-  newName: ghcr.io/madfam-org/primavera3d/web
+  - digest: sha256:c5fef3d9ddfbac39007227a6aaddedf6f220c7a916e33d488f87628880319b99
+    name: ghcr.io/madfam-org/primavera3d/web
+    newName: ghcr.io/madfam-org/primavera3d/web

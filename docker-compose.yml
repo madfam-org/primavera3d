@@ -24,7 +24,8 @@ services:
       - JANUA_ENABLED=true
       - JANUA_JWT_SECRET=dev-shared-janua-secret-32chars!!
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/health"]
+      test:
+        ['CMD', 'wget', '--no-verbose', '--tries=1', '--spider', 'http://localhost:3000/api/health']
       interval: 30s
       timeout: 10s
       retries: 3

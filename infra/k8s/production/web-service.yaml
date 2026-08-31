@@ -8,6 +8,6 @@ spec:
   selector:
     app: primavera3d-web
   ports:
-  - port: 80
-    targetPort: 3000
-    protocol: TCP
+    - port: 80
+      targetPort: 3000
+      protocol: TCP

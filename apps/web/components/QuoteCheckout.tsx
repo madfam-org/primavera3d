@@ -87,7 +87,7 @@ function PaymentMethodSelector({
 
   if (!providerInfo) return null;
 
-  const availableMethods = providerInfo.paymentMethods.filter((pm) => pm.available);
+  const availableMethods = providerInfo.paymentMethods.filter(pm => pm.available);
 
   return (
     <div className="space-y-3">
@@ -95,7 +95,7 @@ function PaymentMethodSelector({
         Payment Method
       </label>
       <div className="space-y-2">
-        {availableMethods.map((pm) => (
+        {availableMethods.map(pm => (
           <button
             key={pm.type}
             onClick={() => onSelect(pm.type)}
@@ -115,14 +115,18 @@ function PaymentMethodSelector({
                 {pm.processingTime && ` • ${pm.processingTime}`}
               </div>
             </div>
-            {selectedMethod === pm.type && (
-              <span className="text-green-500 text-xl">✓</span>
-            )}
+            {selectedMethod === pm.type && <span className="text-green-500 text-xl">✓</span>}
           </button>
         ))}
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400">
-        Powered by {providerInfo.provider === 'conekta' ? 'Conekta' : providerInfo.provider === 'polar' ? 'Polar' : 'Stripe'} • Secure payment processing by Janua
+        Powered by{' '}
+        {providerInfo.provider === 'conekta'
+          ? 'Conekta'
+          : providerInfo.provider === 'polar'
+            ? 'Polar'
+            : 'Stripe'}{' '}
+        • Secure payment processing by Janua
       </p>
     </div>
   );
@@ -185,7 +189,7 @@ function QuoteForm({ onQuoteCalculated, onProceedToCheckout }: QuoteFormProps) {
           Manufacturing Process
         </label>
         <div className="grid grid-cols-2 gap-3">
-          {PROCESSES.map((p) => (
+          {PROCESSES.map(p => (
             <button
               key={p.id}
               onClick={() => handleProcessChange(p.id)}
@@ -209,10 +213,10 @@ function QuoteForm({ onQuoteCalculated, onProceedToCheckout }: QuoteFormProps) {
         </label>
         <select
           value={material}
-          onChange={(e) => setMaterial(e.target.value as Material)}
+          onChange={e => setMaterial(e.target.value as Material)}
           className="w-full p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
         >
-          {MATERIALS[process]?.map((m) => (
+          {MATERIALS[process]?.map(m => (
             <option key={m.id} value={m.id}>
               {m.name}
             </option>
@@ -226,15 +230,13 @@ function QuoteForm({ onQuoteCalculated, onProceedToCheckout }: QuoteFormProps) {
           Dimensions (mm)
         </label>
         <div className="grid grid-cols-3 gap-3">
-          {(['x', 'y', 'z'] as const).map((axis) => (
+          {(['x', 'y', 'z'] as const).map(axis => (
             <div key={axis}>
               <label className="text-xs text-gray-500 dark:text-gray-400 uppercase">{axis}</label>
               <input
                 type="number"
                 value={dimensions[axis]}
-                onChange={(e) =>
-                  setDimensions((d) => ({ ...d, [axis]: Number(e.target.value) || 0 }))
-                }
+                onChange={e => setDimensions(d => ({ ...d, [axis]: Number(e.target.value) || 0 }))}
                 min={1}
                 max={500}
                 className="w-full p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
@@ -256,7 +258,7 @@ function QuoteForm({ onQuoteCalculated, onProceedToCheckout }: QuoteFormProps) {
           <input
             type="number"
             value={quantity}
-            onChange={(e) => setQuantity(Math.max(1, Number(e.target.value) || 1))}
+            onChange={e => setQuantity(Math.max(1, Number(e.target.value) || 1))}
             min={1}
             max={1000}
             className="w-full p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
@@ -268,7 +270,7 @@ function QuoteForm({ onQuoteCalculated, onProceedToCheckout }: QuoteFormProps) {
           </label>
           <select
             value={currency}
-            onChange={(e) => setCurrency(e.target.value as Currency)}
+            onChange={e => setCurrency(e.target.value as Currency)}
             className="w-full p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
           >
             <option value="MXN">🇲🇽 MXN - Mexican Peso</option>
@@ -441,7 +443,7 @@ function CheckoutForm({ quote, currency, onBack }: CheckoutFormProps) {
           <input
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
             placeholder="your@email.com"
             required
             className="w-full p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
@@ -454,7 +456,7 @@ function CheckoutForm({ quote, currency, onBack }: CheckoutFormProps) {
           <input
             type="text"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={e => setName(e.target.value)}
             placeholder="John Doe"
             className="w-full p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
           />
@@ -563,10 +565,12 @@ export function QuoteCheckout({
   return (
     <CotizaProvider
       config={{
-        baseUrl: cotizaApiUrl || process.env.NEXT_PUBLIC_COTIZA_API_URL || 'https://api.cotiza.studio',
+        baseUrl:
+          cotizaApiUrl || process.env.NEXT_PUBLIC_COTIZA_API_URL || 'https://api.cotiza.studio',
       }}
       checkoutConfig={{
-        januaApiUrl: januaApiUrl || process.env.NEXT_PUBLIC_JANUA_API_URL || 'https://api.janua.dev',
+        januaApiUrl:
+          januaApiUrl || process.env.NEXT_PUBLIC_JANUA_API_URL || 'https://api.janua.dev',
         januaPublishableKey: januaPublishableKey || process.env.NEXT_PUBLIC_JANUA_PUBLISHABLE_KEY,
         successUrl: '/orders/success',
         cancelUrl: '/quote',
@@ -585,7 +589,11 @@ export function QuoteCheckout({
         )}
 
         {step === 'checkout' && currentQuote && (
-          <CheckoutForm quote={currentQuote} currency={currentCurrency} onBack={handleBackToQuote} />
+          <CheckoutForm
+            quote={currentQuote}
+            currency={currentCurrency}
+            onBack={handleBackToQuote}
+          />
         )}
       </div>
     </CotizaProvider>

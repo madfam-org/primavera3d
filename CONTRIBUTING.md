@@ -5,15 +5,18 @@
 ### Getting Started
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/primavera3d/website.git
    cd website
    ```
 
 2. **Run automated setup**
+
    ```bash
    npm run setup
    ```
+
    This will:
    - Check Node.js version
    - Install dependencies
@@ -59,6 +62,7 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 - `build:` Build system changes
 
 Examples:
+
 ```bash
 git commit -m "feat: add 3D model loading indicator"
 git commit -m "fix: resolve hydration error in portfolio grid"
@@ -83,6 +87,7 @@ npm run test:e2e
 ### Pull Request Process
 
 1. Create a feature branch from `develop`
+
    ```bash
    git checkout -b feat/your-feature-name
    ```
@@ -90,6 +95,7 @@ npm run test:e2e
 2. Make your changes and commit them
 
 3. Push to your fork/branch
+
    ```bash
    git push origin feat/your-feature-name
    ```
