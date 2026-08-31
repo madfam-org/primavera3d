@@ -37,10 +37,10 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-bold mb-4">Primavera3D</h3>
             <p className="text-gray-400 mb-6 max-w-sm">
-              Transforming ideas into reality through advanced 3D modeling, 
-              parametric design, and digital fabrication.
+              Transforming ideas into reality through advanced 3D modeling, parametric design, and
+              digital fabrication.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3 text-gray-400">
               <div className="flex items-center gap-3">
@@ -53,7 +53,10 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-blueprint-blue" />
-                <a href="mailto:hello@primavera3d.pro" className="hover:text-white transition-colors">
+                <a
+                  href="mailto:hello@primavera3d.pro"
+                  className="hover:text-white transition-colors"
+                >
                   hello@primavera3d.pro
                 </a>
               </div>
@@ -64,9 +67,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
+              {footerLinks.services.map(link => (
                 <li key={link.href}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
@@ -81,9 +84,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
+              {footerLinks.company.map(link => (
                 <li key={link.href}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
@@ -98,9 +101,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Resources</h4>
             <ul className="space-y-2">
-              {footerLinks.resources.map((link) => (
+              {footerLinks.resources.map(link => (
                 <li key={link.href}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
@@ -116,13 +119,21 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-400 mb-6">
             <span className="text-gray-500">MADFAM Ecosystem:</span>
-            <a href="https://cotiza.studio" className="hover:text-white transition-colors">Cotiza</a>
+            <a href="https://cotiza.studio" className="hover:text-white transition-colors">
+              Cotiza
+            </a>
             <span className="text-gray-600">·</span>
-            <a href="https://yantra4d.com" className="hover:text-white transition-colors">Yantra4D</a>
+            <a href="https://yantra4d.com" className="hover:text-white transition-colors">
+              Yantra4D
+            </a>
             <span className="text-gray-600">·</span>
-            <a href="https://forgesight.quest" className="hover:text-white transition-colors">Forgesight</a>
+            <a href="https://forgesight.quest" className="hover:text-white transition-colors">
+              Forgesight
+            </a>
             <span className="text-gray-600">·</span>
-            <a href="https://forj.design" className="hover:text-white transition-colors">Forj</a>
+            <a href="https://forj.design" className="hover:text-white transition-colors">
+              Forj
+            </a>
           </div>
         </div>
 
@@ -130,15 +141,20 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-gray-400 text-sm">
             © {new Date().getFullYear()} Primavera3D. By{' '}
-            <a href="https://madfam.io" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+            <a
+              href="https://madfam.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
               Innovaciones MADFAM
             </a>
             .
           </div>
-          
+
           {/* Social Links */}
           <div className="flex items-center gap-4">
-            {socialLinks.map((social) => {
+            {socialLinks.map(social => {
               const Icon = social.icon;
               return (
                 <a
@@ -157,13 +173,22 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div className="flex items-center gap-6 text-sm">
-            <a href="https://madfam.io/privacy" className="text-gray-400 hover:text-white transition-colors">
+            <a
+              href="https://madfam.io/privacy"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               Privacy Policy
             </a>
-            <a href="https://madfam.io/terms" className="text-gray-400 hover:text-white transition-colors">
+            <a
+              href="https://madfam.io/terms"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               Terms of Service
             </a>
-            <a href="https://status.madfam.io" className="text-gray-400 hover:text-white transition-colors">
+            <a
+              href="https://status.madfam.io"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               Status
             </a>
           </div>

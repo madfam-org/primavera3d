@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
 
 const messages = {
   en: {
@@ -41,16 +42,16 @@ export default function Error({
     <div className="flex min-h-[50vh] flex-col items-center justify-center px-6">
       <div className="mx-auto max-w-md text-center">
         <div className="flex h-12 w-12 mx-auto items-center justify-center rounded-lg bg-red-100 dark:bg-red-900/30">
-          <span className="text-lg font-bold text-red-600 dark:text-red-400" aria-hidden="true">!</span>
+          <span className="text-lg font-bold text-red-600 dark:text-red-400" aria-hidden="true">
+            !
+          </span>
         </div>
         <h2 className="mt-4 text-lg font-semibold">{m.title}</h2>
         <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
           {error.message || m.description}
         </p>
         {error?.digest && (
-          <p className="mt-2 text-xs text-gray-400 dark:text-gray-500 font-mono">
-            {error.digest}
-          </p>
+          <p className="mt-2 text-xs text-gray-400 dark:text-gray-500 font-mono">{error.digest}</p>
         )}
         <div className="mt-6 flex items-center justify-center gap-3">
           <button
@@ -59,12 +60,12 @@ export default function Error({
           >
             {m.retry}
           </button>
-          <a
+          <Link
             href="/"
             className="rounded-md border border-gray-300 dark:border-gray-600 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             {m.home}
-          </a>
+          </Link>
         </div>
       </div>
     </div>

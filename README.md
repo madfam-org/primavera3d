@@ -20,15 +20,15 @@ Primavera3D showcases professional 3D modeling and digital fabrication services 
 
 ## Tech Stack
 
-| Category     | Technology                                           |
-| ------------ | ---------------------------------------------------- |
-| Framework    | Next.js 14 (App Router)                              |
-| Language     | TypeScript 5                                         |
-| 3D Rendering | Three.js, React Three Fiber, @react-three/drei       |
-| Styling      | Tailwind CSS with Blueprint Aesthetic design system  |
-| CMS          | Sanity.io                                            |
-| Database     | PostgreSQL with Prisma ORM                           |
-| Media        | Cloudinary (images), Mux (video), AWS S3 (3D models) |
+| Category     | Technology                                                               |
+| ------------ | ------------------------------------------------------------------------ |
+| Framework    | Next.js 14 (App Router)                                                  |
+| Language     | TypeScript 5                                                             |
+| 3D Rendering | Three.js, React Three Fiber, @react-three/drei                           |
+| Styling      | Tailwind CSS with Blueprint Aesthetic design system                      |
+| CMS          | Sanity.io                                                                |
+| Database     | PostgreSQL with Prisma ORM                                               |
+| Media        | Cloudinary (images), Mux (video), AWS S3 (3D models)                     |
 | Deployment   | MADFAM k3s (bare-metal Hetzner) — GHCR images + Argo CD, Enclii platform |
 
 ## Project Structure

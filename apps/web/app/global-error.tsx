@@ -40,9 +40,7 @@ export default function GlobalError({
       <body className="flex min-h-screen items-center justify-center bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 px-4 py-8 sm:p-8">
         <div className="text-center max-w-md">
           <h2 className="text-2xl font-semibold mb-2">{m.title}</h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-            {m.description}
-          </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">{m.description}</p>
           {error?.digest && (
             <p className="text-xs text-gray-400 dark:text-gray-500 font-mono mb-4">
               {error.digest}

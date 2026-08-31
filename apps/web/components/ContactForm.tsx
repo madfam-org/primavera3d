@@ -18,10 +18,10 @@ export default function ContactForm() {
     setErrors({});
 
     const formData = new FormData(e.currentTarget);
-    
+
     try {
       const response = await submitContactForm(formData);
-      
+
       if (response.success) {
         setStatus('success');
         setMessage(response.message);
@@ -34,7 +34,7 @@ export default function ContactForm() {
           setErrors(response.errors);
         }
       }
-    } catch (_error) {
+    } catch {
       setStatus('error');
       setMessage('An unexpected error occurred. Please try again.');
     } finally {
@@ -56,9 +56,7 @@ export default function ContactForm() {
             required
             className="w-full px-4 py-2 bg-blueprint-dark border border-blueprint-light/30 rounded-lg focus:outline-none focus:border-blueprint-blue transition-colors"
           />
-          {errors.name && (
-            <p className="mt-1 text-sm text-red-400">{errors.name}</p>
-          )}
+          {errors.name && <p className="mt-1 text-sm text-red-400">{errors.name}</p>}
         </div>
 
         <div>
@@ -72,9 +70,7 @@ export default function ContactForm() {
             required
             className="w-full px-4 py-2 bg-blueprint-dark border border-blueprint-light/30 rounded-lg focus:outline-none focus:border-blueprint-blue transition-colors"
           />
-          {errors.email && (
-            <p className="mt-1 text-sm text-red-400">{errors.email}</p>
-          )}
+          {errors.email && <p className="mt-1 text-sm text-red-400">{errors.email}</p>}
         </div>
 
         <div>
@@ -113,9 +109,7 @@ export default function ContactForm() {
           required
           className="w-full px-4 py-2 bg-blueprint-dark border border-blueprint-light/30 rounded-lg focus:outline-none focus:border-blueprint-blue transition-colors"
         />
-        {errors.subject && (
-          <p className="mt-1 text-sm text-red-400">{errors.subject}</p>
-        )}
+        {errors.subject && <p className="mt-1 text-sm text-red-400">{errors.subject}</p>}
       </div>
 
       <div>
@@ -129,9 +123,7 @@ export default function ContactForm() {
           required
           className="w-full px-4 py-2 bg-blueprint-dark border border-blueprint-light/30 rounded-lg focus:outline-none focus:border-blueprint-blue transition-colors resize-none"
         />
-        {errors.message && (
-          <p className="mt-1 text-sm text-red-400">{errors.message}</p>
-        )}
+        {errors.message && <p className="mt-1 text-sm text-red-400">{errors.message}</p>}
       </div>
 
       {status === 'success' && (
@@ -165,9 +157,10 @@ export default function ContactForm() {
           w-full md:w-auto px-8 py-3 rounded-lg font-medium
           flex items-center justify-center gap-2
           transition-all duration-300
-          ${isSubmitting 
-            ? 'bg-gray-700 cursor-not-allowed opacity-50' 
-            : 'bg-blueprint-blue hover:bg-blueprint-blue/80 text-white neon-border pulse-glow hover-lift'
+          ${
+            isSubmitting
+              ? 'bg-gray-700 cursor-not-allowed opacity-50'
+              : 'bg-blueprint-blue hover:bg-blueprint-blue/80 text-white neon-border pulse-glow hover-lift'
           }
         `}
       >

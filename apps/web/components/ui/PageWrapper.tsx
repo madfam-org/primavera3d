@@ -6,15 +6,15 @@ interface PageWrapperProps {
   className?: string;
 }
 
-const PageWrapper: React.FC<PageWrapperProps> = ({ 
-  variant = 'default', 
-  children, 
-  className = '' 
+const PageWrapper: React.FC<PageWrapperProps> = ({
+  variant = 'default',
+  children,
+  className = '',
 }) => {
   const variants = {
     default: 'bp-page',
     'blueprint-stage': 'bp-page blueprint-stage',
-    grid: 'bp-page blueprint-grid'
+    grid: 'bp-page blueprint-grid',
   };
 
   const pageClass = `${variants[variant]} ${className}`;
@@ -23,18 +23,12 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
     return (
       <main className={pageClass}>
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/5 to-black/20" />
-        <div className="relative">
-          {children}
-        </div>
+        <div className="relative">{children}</div>
       </main>
     );
   }
 
-  return (
-    <main className={pageClass}>
-      {children}
-    </main>
-  );
+  return <main className={pageClass}>{children}</main>;
 };
 
 interface SectionProps {
@@ -44,9 +38,7 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ children, className = '' }) => (
   <section className={`bp-section ${className}`}>
-    <div className="bp-container">
-      {children}
-    </div>
+    <div className="bp-container">{children}</div>
   </section>
 );
 

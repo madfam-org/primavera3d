@@ -20,13 +20,13 @@ spec:
       app.kubernetes.io/part-of: primavera3d
   policyTypes: [Ingress]
   ingress:
-  - from:
-    - namespaceSelector:
-        matchLabels:
-          kubernetes.io/metadata.name: cloudflare-tunnel
-    ports:
-    - port: 3000
-      protocol: TCP
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: cloudflare-tunnel
+      ports:
+        - port: 3000
+          protocol: TCP
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -39,15 +39,15 @@ spec:
       app.kubernetes.io/part-of: primavera3d
   policyTypes: [Egress]
   egress:
-  - to:
-    - namespaceSelector:
-        matchLabels:
-          kubernetes.io/metadata.name: kube-system
-    ports:
-    - port: 53
-      protocol: UDP
-    - port: 53
-      protocol: TCP
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+      ports:
+        - port: 53
+          protocol: UDP
+        - port: 53
+          protocol: TCP
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -60,14 +60,14 @@ spec:
       app.kubernetes.io/part-of: primavera3d
   policyTypes: [Egress]
   egress:
-  - to:
-    - namespaceSelector:
-        matchLabels:
-          kubernetes.io/metadata.name: data
-    ports:
-    - port: 5432
-    - port: 6432
-    - port: 6379
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: data
+      ports:
+        - port: 5432
+        - port: 6432
+        - port: 6379
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -80,9 +80,9 @@ spec:
       app.kubernetes.io/part-of: primavera3d
   policyTypes: [Egress]
   egress:
-  - ports:
-    - port: 443
-      protocol: TCP
+    - ports:
+        - port: 443
+          protocol: TCP
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -95,12 +95,12 @@ spec:
       app.kubernetes.io/part-of: primavera3d
   policyTypes: [Ingress, Egress]
   ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          app.kubernetes.io/part-of: primavera3d
+    - from:
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/part-of: primavera3d
   egress:
-  - to:
-    - podSelector:
-        matchLabels:
-          app.kubernetes.io/part-of: primavera3d
+    - to:
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/part-of: primavera3d

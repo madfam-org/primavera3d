@@ -61,29 +61,22 @@ export default function FeaturedProjects() {
               <div className="aspect-[4/3] relative overflow-hidden bg-gray-800 blueprint-sheet">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80 z-10" />
               </div>
-              
+
               <div className="p-6">
-                <span className="text-sm text-blueprint-blue font-medium">
-                  {project.category}
-                </span>
+                <span className="text-sm text-blueprint-blue font-medium">{project.category}</span>
                 <h3 className="text-xl font-bold mt-2 mb-2 group-hover:text-blueprint-light transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 mb-4">
-                  {project.description}
-                </p>
+                <p className="text-gray-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-2 py-1 bg-gray-800 text-gray-400 rounded"
-                    >
+                  {project.tags.map(tag => (
+                    <span key={tag} className="text-xs px-2 py-1 bg-gray-800 text-gray-400 rounded">
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
-              
+
               <Link
                 href={`/portfolio/${project.id}`}
                 className="absolute inset-0 z-20"

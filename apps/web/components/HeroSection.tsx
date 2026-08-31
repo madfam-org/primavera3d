@@ -14,16 +14,14 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="text-white drop-shadow-2xl">
-              Primavera
-            </span>
+            <span className="text-white drop-shadow-2xl">Primavera</span>
             <span className="bg-gradient-to-r from-blueprint-blue to-blueprint-light bg-clip-text text-transparent drop-shadow-lg">
               3D
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto drop-shadow-lg font-medium">
-            Transforming ideas into reality through advanced 3D modeling, 
-            parametric design, and digital fabrication
+            Transforming ideas into reality through advanced 3D modeling, parametric design, and
+            digital fabrication
           </p>
         </motion.div>
 

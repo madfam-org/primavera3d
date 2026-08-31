@@ -5,11 +5,7 @@ import { useFrame } from '@react-three/fiber';
 import { Mesh } from 'three';
 import { Scene3DProps } from './types.js';
 
-export function Scene3D({ 
-  rotation = true,
-  scale = 1,
-  position = [0, 0, 0]
-}: Scene3DProps) {
+export function Scene3D({ rotation = true, scale = 1, position = [0, 0, 0] }: Scene3DProps) {
   const meshRef = useRef<Mesh>(null);
 
   useFrame((state, delta) => {
@@ -20,13 +16,7 @@ export function Scene3D({
   });
 
   return (
-    <mesh
-      ref={meshRef}
-      position={position}
-      scale={scale}
-      castShadow
-      receiveShadow
-    >
+    <mesh ref={meshRef} position={position} scale={scale} castShadow receiveShadow>
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color="#2563EB" metalness={0.3} roughness={0.4} />
     </mesh>
