@@ -33,10 +33,10 @@ export default function ContactPage() {
                     <div>
                       <p className="font-medium">Email</p>
                       <a
-                        href="mailto:info@primavera3d.pro"
+                        href="mailto:support@madfam.io"
                         className="text-gray-400 hover:text-blueprint-blue transition-colors"
                       >
-                        info@primavera3d.pro
+                        support@madfam.io
                       </a>
                     </div>
                   </div>
