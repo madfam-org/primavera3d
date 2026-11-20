@@ -15,7 +15,7 @@ describe('Footer', () => {
   it('only links to routes the app serves', () => {
     const { container } = render(<Footer />);
     const internal = Array.from(container.querySelectorAll('a[href^="/"]')).map(
-      a => (a.getAttribute('href') ?? '').split('#')[0]
+      a => (a.getAttribute('href') ?? '').split('#')[0] ?? ''
     );
     expect(internal.length).toBeGreaterThan(0);
     const missing = internal.filter(href => !routeExists(href));
