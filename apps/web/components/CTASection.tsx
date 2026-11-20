@@ -28,14 +28,14 @@ export default function CTASection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href="/quote"
               className="inline-flex items-center justify-center px-8 py-4 bg-blueprint-blue text-white rounded-lg neon-border pulse-glow hover-lift transition-all duration-300"
             >
               <MessageSquare className="mr-2 h-5 w-5" />
               Get a Quote
             </Link>
             <Link
-              href="/schedule"
+              href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-blueprint-blue text-blueprint-light rounded-lg glass-light hover-lift neon-border transition-all duration-300"
             >
               <Calendar className="mr-2 h-5 w-5" />

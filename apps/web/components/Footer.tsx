@@ -11,14 +11,12 @@ const footerLinks = {
   company: [
     { label: 'About Us', href: '/about' },
     { label: 'Portfolio', href: '/portfolio' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Careers', href: '/careers' },
   ],
   resources: [
-    { label: 'Documentation', href: '/docs' },
-    { label: 'Materials Guide', href: '/materials' },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'FAQ', href: '/faq' },
+    // /quote is where prices live (instant estimates through Cotiza); there
+    // is no separate /pricing page. Only link routes that exist in app/.
+    { label: 'Pricing', href: '/quote' },
+    { label: 'Contact', href: '/contact' },
   ],
 };
 
@@ -53,11 +51,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-blueprint-blue" />
-                <a
-                  href="mailto:hello@primavera3d.pro"
-                  className="hover:text-white transition-colors"
-                >
-                  hello@primavera3d.pro
+                <a href="mailto:support@madfam.io" className="hover:text-white transition-colors">
+                  support@madfam.io
                 </a>
               </div>
             </div>
@@ -127,7 +122,7 @@ export default function Footer() {
               Yantra4D
             </a>
             <span className="text-gray-600">·</span>
-            <a href="https://forgesight.quest" className="hover:text-white transition-colors">
+            <a href="https://www.forgesight.app" className="hover:text-white transition-colors">
               Forgesight
             </a>
             <span className="text-gray-600">·</span>
