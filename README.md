@@ -174,17 +174,17 @@ pnpm db:migrate       # Run migrations
 
 ## Pages
 
-| Route               | Description                           |
-| ------------------- | ------------------------------------- |
-| `/`                 | Homepage with hero, featured projects |
-| `/portfolio`        | Full project gallery with 3D previews |
-| `/portfolio/[slug]` | Individual project detail page        |
-| `/services`         | Service offerings overview            |
-| `/services/[slug]`  | Individual service detail             |
-| `/quote`            | Quote form on a local Cotiza stub (no quote reaches Cotiza, 2026-11-26) |
+| Route               | Description                                                                |
+| ------------------- | -------------------------------------------------------------------------- |
+| `/`                 | Homepage with hero, featured projects                                      |
+| `/portfolio`        | Full project gallery with 3D previews                                      |
+| `/portfolio/[slug]` | Individual project detail page                                             |
+| `/services`         | Service offerings overview                                                 |
+| `/services/[slug]`  | Individual service detail                                                  |
+| `/quote`            | Quote form on a local Cotiza stub (no quote reaches Cotiza, 2026-11-26)    |
 | `/orders/success`   | Order confirmation on the same stub (no order tracking exists, 2026-11-26) |
-| `/about`            | Company and team information          |
-| `/contact`          | Contact form and information          |
+| `/about`            | Company and team information                                               |
+| `/contact`          | Contact form and information                                               |
 
 ## MADFAM Ecosystem Integration
 
