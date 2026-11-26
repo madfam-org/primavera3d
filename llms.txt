@@ -9,6 +9,11 @@ Compact LLM context index for this repository.
 - `ECOSYSTEM.md` — MADFAM ecosystem and Enclii deployment context when present.
 - `llms-full.txt` — full context map and durable operating contract.
 
+## Commercial pipeline state (2026-11-26)
+
+- The quote flow is a stub: `/quote` and `/orders/success` run on a local Cotiza client stub with no network call and no payment. `robots.txt` names a sitemap that answers 404; no analytics loads.
+- Detail: `AGENTS.md` «Commercial pipeline state»; cross-repo source: `internal-devops/audits/2026-11-26-business-pipeline/README.md` (private).
+
 ## Production operations
 
 Routine production operations are Enclii-first. Use Enclii web, API, or CLI

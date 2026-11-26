@@ -48,6 +48,24 @@ redirect and should not become the source of truth again.
 Regenerate or repair these files with
 `internal-devops/scripts/sync-agent-docs.py` from the labspace ecosystem.
 
+## Commercial pipeline state (2026-11-26)
+
+What is true for Primavera3D at each stage of MADFAM's commercial pipeline
+that reaches it, read on `main` and against the public host on 2026-11-26:
+
+- **Discovery.** `primavera3d.pro` answers, but its `robots.txt`
+  (`apps/web/public/robots.txt`) names a `/sitemap.xml` that answers 404, and
+  the host serves no `/llms.txt`. No visitor analytics loads on it.
+- **Conversion and fulfillment.** The quote flow is a stub: `/quote` and
+  `/orders/success` run on a local stub of the Cotiza client
+  (`apps/web/lib/cotiza-stub.tsx`) that makes no network call and takes no
+  payment, so no quote or order reaches Cotiza. Detail:
+  [README › Quote Calculator Integration](./README.md#quote-calculator-integration).
+
+Cross-repo source: the
+[2026-11-26 business pipeline audit](https://github.com/madfam-org/internal-devops/blob/main/audits/2026-11-26-business-pipeline/README.md)
+in `internal-devops` (private).
+
 ---
 
 ## Legacy CLAUDE.md guidance imported on 2026-05-13
