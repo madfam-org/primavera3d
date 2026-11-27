@@ -14,7 +14,7 @@
 Primavera3D showcases professional 3D modeling and digital fabrication services with an immersive, interactive experience. The platform features:
 
 - **Interactive 3D Portfolio** - Browse projects with real-time 3D model viewing
-- **Instant Quoting** - Integrated Cotiza quote calculator for manufacturing services
+- **Quoting (not live)** - As of 2026-11-26 `/quote` runs on a local stub of the Cotiza client: it makes no network call and takes no payment ([details](#quote-calculator-integration))
 - **Service Showcase** - Detailed service pages for modeling, scanning, and fabrication
 - **Contact & Lead Generation** - Streamlined inquiry forms with CRM integration
 
@@ -42,7 +42,7 @@ primavera3d/
 │       │   ├── contact/        # Contact form
 │       │   ├── orders/         # Order tracking
 │       │   ├── portfolio/      # Project portfolio
-│       │   ├── quote/          # Cotiza quote calculator embed
+│       │   ├── quote/          # Quote form on a local Cotiza stub
 │       │   ├── services/       # Service pages
 │       │   └── api/            # API routes
 │       ├── components/         # React components
@@ -127,12 +127,10 @@ import { ModelViewer } from '@primavera3d/viewer-3d';
 
 ### Quote Calculator Integration
 
-Primavera3D embeds the real Cotiza quote calculator for instant manufacturing quotes:
-
-```tsx
-// app/quote/page.tsx
-<CotizaEmbed tenant="primavera3d" services={['3d-printing', 'cnc', 'laser-cutting']} />
-```
+As of 2026-11-26 `/quote` renders `QuoteCheckout` (`apps/web/components/QuoteCheckout.tsx`),
+which imports a local stub of the Cotiza client (`apps/web/lib/cotiza-stub.tsx`). The stub
+makes no network call and takes no payment, and `/orders/success` reads the same stub, so no
+quote or order reaches Cotiza. It becomes real when the Cotiza client package is published.
 
 ### Blueprint Aesthetic Design System
 
@@ -176,23 +174,23 @@ pnpm db:migrate       # Run migrations
 
 ## Pages
 
-| Route               | Description                           |
-| ------------------- | ------------------------------------- |
-| `/`                 | Homepage with hero, featured projects |
-| `/portfolio`        | Full project gallery with 3D previews |
-| `/portfolio/[slug]` | Individual project detail page        |
-| `/services`         | Service offerings overview            |
-| `/services/[slug]`  | Individual service detail             |
-| `/quote`            | Integrated Cotiza quote calculator    |
-| `/orders`           | Order tracking for customers          |
-| `/about`            | Company and team information          |
-| `/contact`          | Contact form and information          |
+| Route               | Description                                                                |
+| ------------------- | -------------------------------------------------------------------------- |
+| `/`                 | Homepage with hero, featured projects                                      |
+| `/portfolio`        | Full project gallery with 3D previews                                      |
+| `/portfolio/[slug]` | Individual project detail page                                             |
+| `/services`         | Service offerings overview                                                 |
+| `/services/[slug]`  | Individual service detail                                                  |
+| `/quote`            | Quote form on a local Cotiza stub (no quote reaches Cotiza, 2026-11-26)    |
+| `/orders/success`   | Order confirmation on the same stub (no order tracking exists, 2026-11-26) |
+| `/about`            | Company and team information                                               |
+| `/contact`          | Contact form and information                                               |
 
 ## MADFAM Ecosystem Integration
 
 Primavera3D integrates with other MADFAM platforms:
 
-- **Cotiza** - Real-time manufacturing quotes embedded at `/quote`
+- **Cotiza** - planned quoting at `/quote`; as of 2026-11-26 it runs on a local stub of the Cotiza client
 - **Sim4D** - Parametric design viewer for complex projects
 - **Blueprint Harvester** - 3D asset management and discovery
 
